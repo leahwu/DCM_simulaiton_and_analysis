@@ -1,0 +1,6 @@
+output_data/part2_case2/case2_result1.xlsx filter=lfs diff=lfs merge=lfs -text
+output_data/part2_case2/case2_result2.xlsx filter=lfs diff=lfs merge=lfs -text
+output_data/part2_case2/case2_result3.xlsx filter=lfs diff=lfs merge=lfs -text
+output_data/part2_case2/case2_result4.xlsx filter=lfs diff=lfs merge=lfs -text
+output_data/part2_case2/case2_result5.xlsx filter=lfs diff=lfs merge=lfs -text
+output_data/part2_case2/case2_result6.xlsx filter=lfs diff=lfs merge=lfs -text
