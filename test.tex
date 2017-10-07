@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{amstext}
+\usepackage{alltt}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{booktabs}
+\begin{document}
+
+
+From the relationship between $W^{+}$ and $W^{-}$: 
+  \begin{align*}
+ W^{+} = a \cdot d \cdot{W^{-}}^{s} + a \cdot (1-d) \cdot {\hat{W^{-}}} ^{s} 
+ \end{align*}
+ where $\hat{W^{-}}$ is the independent copy of $W^{-}$. Applying the double integral, the probability of $W^{+}$ is thus the following:
+  \begin{align*}
+ P( W^{+} > x ) & = P( d \cdot{W^{-}}^{s} + (1 - d) \cdot {\hat{W^{-}}} ^{s} > \frac{x}{a} ) \\
+          & =  {(\frac{c_{1}}{c})}^{-\beta} +  {(\frac{c_{2}}{c})}^{-\beta} -  {(\frac{ c_{1}c_{2}   }{ c^{2} })}^{-\beta}
+ \end{align*}
+ 
+ where $c_{1}$ is the integral boundary value for $W^{-}$: $c_{1} = {\frac{1}{d}}^{\frac{1}{s}} \cdot {( \frac{x}{a} - (1-d) \cdot c^{s})}^{\frac{1}{s}}$; and $c_{2}$ for $\hat{W^{-}}$: 
+ $c_{2} = {\frac{1}{1-d}}^{\frac{1}{s}} \cdot {( \frac{x}{a} - d \cdot c^{s})}^{\frac{1}{s}}$. Hence the power law distribution:
+ \begin{align*}
+\lim_{x \rightarrow +\infty } \frac{ {(\frac{c_{1}}{c})}^{-\beta} +  {(\frac{c_{2}}{c})}^{-\beta} -  {(\frac{ c_{1}c_{2}   }{ c^{2} })}^{-\beta}  }{x^{-\alpha}} = constant
+\end{align*}
+ \quad\\
+
+To satisfy the power law requirement, we need:
+  \begin{align*}
+  s = \frac{\beta} {\alpha} 
+ \end{align*}
+ \quad\\
+ By definition, the lower bound for $W^{+}$ is parameter b, which could also be shown in the form of a and c:
+   \begin{align*}
+  b = a \cdot d \cdot c^{s} + a \cdot (1-d) \cdot c^{s} = a \cdot c^{s}
+ \end{align*}
+ 
+ Additionally, as the mean of in-degree should be equal to that of out-degree, we have: 
+  \begin{align*}
+  E(W^{+}) = E(W^{-})  & \Rightarrow    a \cdot E({W^{-}}^{s}) = E({W^{-}}^{s})  \\
+ & \Rightarrow    a \cdot \frac{\beta}{\beta - s} \cdot c^{s} = \frac{\beta}{\beta-1} \cdot c  
+ \end{align*}
+ Specifically in consideration of the case where s = 1, given that case in-degree and out-degree are supposed to be equal, thus identical $W^{+}$ and $W^{-}$, a should also be 1.
+ 
+Notes: \\
+\texttt{Samp\_Dist\_Corr}\\
+
+\text{The eigenvector calculation is done by the power iteration method and has no guarantee of convergence. The iteration will stop after max\_iter iterations or an error tolerance of number\_of\_nodes(G)\*tol has been reached.}\\
+
+\text{\#}
+
+\begin{align*}
+s &= \frac{\beta}{\alpha}\\
+a\frac{\beta c^s}{\beta -s}&=\frac{\beta c}{\beta -1}\\
+\Rightarrow 
+ a &= 1 \text{ when } s=1 \\
+a&=\frac{\beta - s}{a^{s-1}(\beta-1)}, \text{ otherwise}
+\end{align*}
+
+para 1 a long long word awd mesf mawdf mfesfmsef msfe sergmmggrdmmm rdgdrgd drg. \\
+
+para 2  a long long word awd mesf mawdf mfesfmsef msfe sergmmggrdmmm rdgdrgd drg. \\
+para3  a long long word awd mesf mawdf mfesfmsef msfe sergmmggrdmmm rdgdrgd drg. 
+\par para4  a long long word awd mesf mawdf mfesfmsef msfe sergmmggrdmmm rdgdrgd drg. 
+
+
+Leslie Lamport was the initial developer of \LaTeX, a document preparation system\cite{lam} based on \TeX.   \\
+Let's see this webstie \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{wiki page}
+\href{https://networkx.github.io/documentation/networkx-1.11/reference/generated/networkx.algorithms.shortest_paths.generic.average_shortest_path_length.html?highlight=average%20shortest%20path%20length}{method description in doc}
+
+\begin{enumerate}
+
+\item 
+\href{https://networkx.github.io/documentation/networkx-1.11/reference/generated/networkx.generators.degree_seq.directed_configuration_model.html?highlight=directed%20configuration%20model#networkx.generators.degree_seq.directed_configuration_model}{\text{directed\_configuration\_model}} \href{https://networkx.github.io/documentation/networkx-1.11/_modules/networkx/generators/degree_seq.html#directed_configuration_model}{$_{\text{[source code]}}$}
+
+\begin{lstlisting}
+
+directed_configuration_model(in_degree_sequence, out_degree_sequence, create_using=None, seed=None) 
+
+\end{lstlisting}
+
+Return a \text{directed\_random graph} with the given degree sequences.
+
+The configuration model generates a random directed pseudograph (graph with parallel edges and self loops) by randomly assigning edges to match the given degree sequences.
+
+To remove parallel edges:
+\begin{lstlisting}
+>>> D=nx.DiGraph(D)
+\end{lstlisting}
+To remove self loops:
+\begin{lstlisting}
+>>> D.remove_edges_from(D.selfloop_edges())
+\end{lstlisting}
+
+\end{enumerate}
+
+\cite{networkx} \\
+\cite{dcm}
+
+From Table \ref{wikivote_stats}, we could see that...
+
+\begin{table}[!hbp]
+\centering
+\caption{Wikipedia vote network statistics}\label{wikivote_stats}
+\begin{tabular}{cc}
+
+\toprule
+Feature name & Value\\
+\midrule
+Nodes size & 7115\\
+Edges & 103689\\
+Expected degree & 14.57\\
+In-out degree correlation & 0.317\\
+Average clustering coefficient & 0.1409\\
+Number of triangles & 608389\\
+Diameter(longest shortest path) & 7\\
+
+\bottomrule
+
+\cline{1-2}
+\hline
+\end{tabular}
+
+\end{table}
+
+awff \\
+\hypertarget{label1}{algorithm} aefaef \\
+
+
+\newpage
+
+we use the \hyperlink{label1}{algo} awfd\\
+
+
+\begin{thebibliography}{999}
+
+\bibitem{lam}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  \url{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}
+  1994.
+ 
+
+\bibitem{networkx} 
+ \text{networkx package}
+  \url{https://networkx.github.io/documentation/networkx-1.11/} 
+  Released Jan 30, 2016
+\bibitem{dcm} 
+ \text{directed\_configuraiton\_model}
+  \url{https://networkx.github.io/documentation/networkx-1.11/reference/generated/networkx.generators.degree_seq.directed_configuration_model.html?highlight=directed
+  %20configuration%20model#networkx.generators.degree_seq.directed_configuration_model}
+  
+\end{thebibliography}
+
+\end{document}
