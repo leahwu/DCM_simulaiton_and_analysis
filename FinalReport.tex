@@ -20,7 +20,7 @@
 breaklines,extendedchars=false,xleftmargin=2em,
 xrightmargin=2em,aboveskip=1em,tabsize=4,showspaces=false}
 
-\title{Report on directed random graph}
+\title{Analysis of the Effect of Degree Correlation on the Relationship between PageRank and Betweenness Centrality, and Effects on Average Shortest Path Length in DCM'}
 \author{\vspace{-6ex} Luhuan Wu, Xiaohui Li}
  \date{10-2-2017}
 %\date{\vspace{-6ex}}
@@ -29,7 +29,7 @@ xrightmargin=2em,aboveskip=1em,tabsize=4,showspaces=false}
 \maketitle
 
 \section{Abstract}
-In this study, we focus on how measures including PageRank (PR), Betweenness Centrality(BC), Degree Centrality(total degree, in-degree, out-degree) evaluate the grapgh's connectivity efficienty, and how PR and BC are correlated. We investigate the effect of dependence between in-degree sequence and out-degree sequence on the correlation between PR and BC, and the influence of those five measures on Average Shortest Path Length(ASPL) of the graph, which is observed by computing ASPL each time a node is eliminated by the order of ranking w.r.t. one specific measure. The results show that degree dependence enhances the correlation between PR and BC; PR fails to capture the graph connectivity efficiency (ASPL) as BC does, however, given high degree dependence, total degree turns out to be the most effective measure. In addition, a real-world directed graph--Wiki-vote network--is studied and yields consistent results.
+\par In this study, we focus on how measures including PageRank (PR), Betweenness Centrality(BC), Degree Centrality(total degree, in-degree, out-degree) evaluate the graph's connectivity efficienty, and to what extent PR and BC are correlated. Specifically, we investigate the effect of dependence between in-degree sequence and out-degree sequence on the correlation between PR and BC, and the influence of those five measures on Average Shortest Path Length(ASPL) of the graph, a measure of graph's connectivity efficiency, which is observed by computing ASPL each time a node is eliminated by the order of ranking w.r.t. one specific measure. The results show a positive correlation between dependence of in- and out- degree sequence and the correlation between PR and BC; PR fails to capture the graph connectivity efficiency (ASPL) while BC and total degree turns out to be the most effective measures and in-degree and out-degree are of medium effect. Lastly, a real-world directed graph--Wiki-vote network--is studied and yields consistent results.
 
 \section{Description}
 Our simulation studies are divided into two parts:
@@ -262,7 +262,7 @@ In this part we introduce two measures of correlation between PageRank and Betwe
 \par In this part, we fix the values of $\alpha, \beta$ and expected degree and vary the value of d from 0 to 1 to change the degree correlation, and observe how rank correlation changes. Since spearman's correlation between PR and BC is a random variable, for each model we repeat the simulation for 20 times independently to obtain the sample correlation between PR and BC.
 
 \subsubsection{Case1: $\alpha=\beta$}
-\par In the simulation, fix $\alpha=\beta=3, E=20, n=5000$ and let $d$ vary from 0 to 1 with step size 0.2, to make the degree correlation vary from 0 to 0.943. The simulation results are given in \ref{table1}, \ref{fig: corrs_1}.and the detailed information of the models are given in excel files (TODO: attach github link).
+\par In the simulation, fix $\alpha=\beta=3, E=20, n=5000$ and let $d$ vary from 0 to 1 with step size 0.2, to make the degree correlation vary from 0 to 0.943. The simulation results are given in \ref{table1}, \ref{case1rankplotBC}, \ref{case1rankplotPR},\ref{fig: corrs_1}, and the detailed information of the models are given in \href{https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/output_data/part1_case1}{excel files}.
 
 \begin{enumerate}
 \item Ranking Plot \\
@@ -312,7 +312,7 @@ Page Rank and Betweenness Centrality values of First 200 nodes in decreasing ord
 
 \item From Table \ref{table1}, we could see that the sample variance of rank correlation is close to 0, which suggests that the sample average of rank correlation is representative.
 \item From Figure \ref{fig: corrs_1}, we could see as d increases,  degree correlation increases, and rank correlation increases.
-\begin{table}[]
+\begin{table}
 \centering
 \caption{Case1 ($\alpha=\beta$): statistics of rank correlation over 20 samples}
 \label{table1}
@@ -348,7 +348,7 @@ d   & computed degree correlation & average of rank correlation & variance of ra
 \end{enumerate}
 
 \subsubsection{Case2: $\alpha \neq \beta$}
-\par In this simulation, fix $\alpha=3, \beta=5$, and expected degree $E = 50$, graph size $ n=5000$ and let d vary from 0 to 1, with step size 2,  to make the degree correlation vary from 0 to 0.816.
+\par In this simulation, fix $\alpha=3, \beta=5$, and expected degree $E = 50$, graph size $ n=5000$ and let d vary from 0 to 1, with step size 2,  to make the degree correlation vary from 0 to 0.816. The simulation results are given in \ref{table2}, \ref{case2rankplotBC}, \ref{case2rankplotPR},\ref{fig: corrs_2}, and the detailed information of the models are given in \href{https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/output_data/part2_case2}{excel files}.
 
 \begin{enumerate}
 \item Ranking Plot \\
@@ -472,7 +472,7 @@ d   & computed degree correlation & average of rank correlation & variance of ra
 
 \subsubsection{Theoretical Models}
 
-\par As we do in Part 1 to vary the degree correlation, we let $d$ range from 0 to 1 with step size 0.25. And the other parameters to fix the model are: $\alpha$ = 2.1, $\beta$ = 3, the expected degree E = 3, the node size of graph n = 5000. We consecutively eliminate 100 nodes and independently repeat the prcedure for 5 times and then compute the average.
+\par As we do in Part 1 to vary the degree correlation, we let $d$ range from 0 to 1 with step size 0.25. And the other parameters to fix the model are: $\alpha$ = 2.1, $\beta$ = 3, the expected degree E = 3, the node size of graph n = 5000. We consecutively eliminate 100 nodes and independently repeat the prcedure for 5 times and then compute the average. The results of repetitions in the case $d=0$  are given in \ref{repetitions}. The results of six diferent dependency levels are given in \ref{comps} and data in \href{https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/output_data/models2_ASPL_analysis}{csv files}.
 
 \begin{enumerate}
 \item Noises in ASPL\\
@@ -573,8 +573,7 @@ Diameter(longest shortest path) & 7\\
 
 \item Fitting Wiki-Vote Network into Theoretical Model\\
 
-\par To determine whether Wiki-vote network has scale-free property (power law degree distribution), and what are the indices if it has, we make the log-log plot of the tail-distribution of in-degree and out-degree sequence, and Lease-Square-Estimate to fit the tail. \hypertarget{powerlaw_fit}{The fitting result} is shown in Figure  :$alpha =
-3.5, \beta = 2.5$,  since we have $E$ = 14.57, in-out degree correlation = 0.317, we can substitue the values into the degree correlation formula to get $d$ = 0.339. 
+\par To determine whether Wiki-vote network has scale-free property (power law degree distribution), and what are the indices if it has, we make the log-log plot of the tail-distribution of in-degree and out-degree sequence, and Lease-Square-Estimate to fit the tail. \hypertarget{powerlaw_fit}{The fitting result} is shown in Figure  :$alpha =3.5, \beta = 2.5$,  since we have $E$ = 14.57, in-out degree correlation = 0.317, we can substitue the values into the degree correlation formula to get $d$ = 0.339. 
 
 
 \begin{figure}[!htbp]
@@ -585,25 +584,25 @@ Diameter(longest shortest path) & 7\\
 
 \item Node Elimination effect on Wiki-Vote network\\
 
-\par The node elimination effect on real graph's average shortest path length is shown in Figure \ref{wikivote_elim}.
+\par The node elimination effect on real graph's average shortest path length is shown in Figure \ref{wikivote_elim}, and the output data is \href{https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/output_data/wiki_vote}{here}.
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=10cm, height=8cm]{final_images/wikivote.png}
 \label{wikivote_elim}
-\caption{Real graph node elimination effect on ASPL.}
+\caption{Node elimination effect on ASPL of Wiki-vote network.}
 \end{figure}
 
 \par Figure \ref{wikivote_elim} shows that PageRank is the worst in measuring the significance of ASPL, while both betweenness centrality and total degree perform well with the former slightly better. The trend and relative ranking in Figure \ref{wiki_vote} is consistent with previous simulation results given the similar degree dependence level. \\ 
 
-\item Node Elimination Effect on Simulated Model of Wiki-Vote \\
+\item Node Elimination Effect on Simulated Model of Wiki-vote Network\\
 
-\par We further generate the theoretical model to fit Wiki-vote network. From \ref{wikivote_stats} and \hyperlink{powerlaw_fit}{tail-distribution fitting}, we have parameters:  $\alpha$ = 3.5, $\beta$ = 2.5,  E = 14.57, d = 0.339 and n = 7115. 
+\par We further generate the theoretical model to fit Wiki-vote network. From \ref{wikivote_stats} and \hyperlink{powerlaw_fit}{tail-distribution fitting}, we have parameters:  $\alpha$ = 3.5, $\beta$ = 2.5,  E = 14.57, d = 0.339 and n = 7115.  We consecutively remove 200 nodes and obtain the results in \ref{wikisim} and \href{https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/output_data/models3_wiki_vote_simulation}{the output data files}.
 \par Note that there exists inflexible difference between fitting model and real graph. Specifically the clustering coefficient, the real data has average clustering coefficients of 0.1409, while the simulation graph is just in the level of 0.005. This time, we repeat the model simulation for 10 times and measure the effect upon ASPL for consecutively 200 nodes. As before, we take the average to reduce the noise. 
 
 \begin{figure}[!htbp]
 \label{wikisim}
 \centering\includegraphics[width=10cm, height=8cm]{final_images/wikisim.png}
-\caption{Fitting model average effect on average shortest path length.}
+\caption{Node Elimination Effect on ASPL of Simulated Model of Wiki-Vote}
 \end{figure}
 
 From Figure \ref{wikisim},  we could see the result is generally similar with the real data in \ref{wikivote_elim} with same ranking of measures' performance: BC--total degree--out-degree-in-degree--PR.
@@ -677,7 +676,8 @@ To satisfy the power law requirement, it suffices that:
  
  \end{steps}
 
-\item TODO: a github repo includes readme.md(introduce how to use the codes?), codes, excel fiels (with specifications) , etc.
+\item \href{https://github.com/leahwu/DCM_simulaiton_and_analysis}{Project's GitHub Page}\\
+This includes the full Python code of this project, from building the graph, testing and analyzing are in the project's GitHub page, weekly reports, a final report, an output data folder and a README file describing the data files.
 
 \end{enumerate}
 
