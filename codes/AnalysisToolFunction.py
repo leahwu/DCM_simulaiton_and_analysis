@@ -374,3 +374,11 @@ def model_to_excel(file_path, model, result, params, giant=None):
         df.to_excel(writer, sheet_name=df.name)
 
     writer.save()
+
+
+def real_graph_to_excel(file_path, result):
+    writer = pd.ExcelWriter(file_path)
+    for i in [1, 2, 3]:
+        df = to_df(result, i)
+
+        df.to_excel(writer, sheet_name=df.name)

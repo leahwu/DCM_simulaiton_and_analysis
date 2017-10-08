@@ -28,7 +28,7 @@ Note that using the edge sequence data, one could recover the graph.
 
 ### Folder: models3_wiki_vote_simulation
 
-There are 7 samples independently generated from a model used to simulate the Wiki_vote networkd, the detailed information of which are  *model_i_.xlsx*(i=1,2,3,4,5,6,7), including **parameters, in-degree, out-degree, pR, BC, edge sequence, index of the removed node, AverageShortestPathLength(ASPL) and label of the nodes being removed subsequently**. Specifically for the sheet containing the last item: label of the nodes being removed subsequently, the index denotes the i th ranking node subsequently being eliminated. The corresponding value to a specific measure(PC, BR, etc) denotes the label of the node in the graph ( all the nodes are labeled from 0 to n - 1(the size of the graph)).
+There are 7 samples independently generated from a model used to simulate the Wiki_vote networkd, the detailed information of which are  *model_i_.xlsx*(i=1,2,3,4,5,6,7), including **parameters, in-degree, out-degree, PR, BC, edge sequence, label of the removed node, AverageShortestPathLength(ASPL) and number of the nodes being removed in each time subsequently**. Specifically for the sheet containing the last item: label of the nodes being removed subsequently, the index denotes the i th ranking node subsequently being eliminated. The corresponding value to a specific measure(PC, BR, etc) denotes the label of the node in the graph ( all the nodes are labeled from 0 to n - 1 where n is the size of the graph).
 
 ### Folder: models2_ASPL_analysis 
 
@@ -40,6 +40,8 @@ Specifically for each csv, the row index i denotes the i th ranking node subsequ
 
 ### Folder: wiki_vote
 
-*din.txt* and *dout.txt* are downloaded from [here](https://snap.stanford.edu/data/wiki-Vote.html).
+*wiki-Vote.txt* are downloaded from [here](https://snap.stanford.edu/data/wiki-Vote.html), which stores the edge sequence of Wiki-vote network.
 
-*bc.txt* and *pr.txt* stores the BC and PR of the nodes.
+*din.txt*, *dout.txt*, bc.txt* and *pr.txt* stores the in-degree sequence, out-degreequence, BC and PR values of the nodes.
+
+*ASPL.xlsx* stores the information in Node-elimination experiment, including **index of the removed node, AverageShortestPathLength(ASPL) and number of the nodes being removed in each time subsequently**.
