@@ -1,8 +1,20 @@
 # DCM_simulaiton_and_analysis
 
+This project aims to simulate and analyze Directed Configuration Model. A complete introduction and report on the project is in [Final_Report.pdf](https://github.com/leahwu/DCM_simulaiton_and_analysis/blob/master/FinalReport.pdf). 
 
+The algorithm to simulate DCM is described in the paper [Directed Random Graphs withGiven Degree Distributions](https://arxiv.org/pdf/1207.2475.pdf)(Ningyuan Chen and Mariana Olvera-Cravioto,July 12, 2012). And the [codes](https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/codes)(Python) are mainly implemented by [networkx package](https://networkx.github.io/documentation/networkx-1.11/).
+
+Lastly, we would like to extend our sincere gratitude to our project supervisor, Professor [Mariana Olvera-Cravioto](http://olvera.ieor.berkeley.edu/).
 
 ## Description of files:
+
+## Foler: final_images
+
+This inlcudes the images being used in final_report.
+
+## Folder: weekly_reports
+
+This includes the reports on weekly progress.
 
 ## Folder: Output_data
 
