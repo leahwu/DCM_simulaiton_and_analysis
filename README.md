@@ -2,9 +2,9 @@
 
 This project aims to simulate and analyze Directed Configuration Model. A complete introduction and report on the project is in [Final_Report.pdf](https://github.com/leahwu/DCM_simulaiton_and_analysis/blob/master/FinalReport.pdf). 
 
-The algorithm to simulate DCM is described in the paper [Directed Random Graphs with Given Degree Distributions](https://arxiv.org/pdf/1207.2475.pdf)(Ningyuan Chen and Mariana Olvera-Cravioto,July 12, 2012). And the [codes](https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/codes)(Python) are mainly implemented by [networkx package](https://networkx.github.io/documentation/networkx-1.11/).
+The algorithm to simulate DCM is described in the paper [Directed Random Graphs with Given Degree Distributions]( https://arxiv.org/pdf/1207.2475.pdf)(Ningyuan Chen and Mariana Olvera-Cravioto, July 12, 2012). And the [codes]( https://github.com/leahwu/DCM_simulaiton_and_analysis/tree/master/codes)(Python) are mainly implemented by [networkx package](https://networkx.github.io/documentation/networkx-1.11/).
 
-The research is conducted with the guidance from Professor [Mariana Olvera-Cravioto](http://olvera.ieor.berkeley.edu/). The github contents are created by Luhuan Wu and Xiaohui Li. 
+The research is conducted with the guidance from professor [Mariana Olvera-Cravioto](http://olvera.ieor.berkeley.edu/). The github contents are created by Luhuan Wu and Xiaohui Li. 
 
 Lastly, we would like to express our sincere gratitude to our nice project supervisor professor Mariana.
 
@@ -12,7 +12,7 @@ Lastly, we would like to express our sincere gratitude to our nice project super
 
 ## Foler: final_images
 
-This inlcudes the images being used in final_report.
+This includes the images being used in final_report.
 
 ## Folder: weekly_reports
 
@@ -30,7 +30,7 @@ Note that using the edge sequence data, one could recover the graph.
 
 ### Folder: models3_wiki_vote_simulation
 
-There are 7 samples independently generated from a model used to simulate the Wiki_vote networkd, the detailed information of which are  *model_i_.xlsx*(i=1,2,3,4,5,6,7), including **parameters, in-degree, out-degree, PR, BC, edge sequence, label of the removed node, AverageShortestPathLength(ASPL) and number of the nodes being removed in each time subsequently**. Specifically for the sheet containing the last item: label of the nodes being removed subsequently, the index denotes the i th ranking node subsequently being eliminated. The corresponding value to a specific measure(PC, BR, etc) denotes the label of the node in the graph ( all the nodes are labeled from 0 to n - 1 where n is the size of the graph).
+There are 10 samples independently generated from a model used to simulate the Wiki_vote networkd, the detailed information of which are  *model_i_.xlsx*(i=1,2,3,4,5,6,7), including **parameters, in-degree, out-degree, PR, BC, edge sequence, label of the removed node, AverageShortestPathLength(ASPL) and number of the nodes being removed in each time subsequently**. Specifically for the sheet containing the last item: label of the nodes being removed subsequently, the index denotes the i th ranking node subsequently being eliminated. The corresponding value to a specific measure(PC, BR, etc) denotes the label of the node in the graph ( all the nodes are labeled from 0 to n - 1 where n is the size of the graph).
 
 ### Folder: models2_ASPL_analysis 
 
