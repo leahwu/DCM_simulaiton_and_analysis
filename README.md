@@ -20,7 +20,8 @@ This includes the reports on weekly progress.
 
 ## Folder: codes
 
-This includes all the python function in applying the numerical simulation and analysis. Specifically, the DCMGenerator.py is the core function in generating the DCM from sample degree sequence, which is yielded from PowerLawDistribution.py and ValidDegree.py. AnalysisToolFunction.py offers the analytical tools in computation and data analysis of the study process. All the scripts are written in Python 3.5. Note the ASPL study part may be very time consuming since ASPL computation runs in exponential theta N, also the DCM generation may be quite long given large difference between in- and out-degree power index, which causes the algorithm to take much more time. 
+This includes all the python functions in applying numerical simulation and analysis. Specifically, the *DCMGenerator.py* is the core function in generating the DCM graph from valid sample degree sequences, which are yielded from *PowerLawDistribution.py* and *ValidDegree.py*. *AnalysisToolFunction.py* offers analytical tools in computation and data analysis of the main research study procedure. 
+All the scripts are written in Python 3.5. Note the ASPL study part may be very time consuming since ASPL computation runs in exponential theta N. Also the DCM generation may be quite long given large difference between in and out-degree power index, which causes the algorithm to take much more time. 
 
 ## Folder: Output_data
 
